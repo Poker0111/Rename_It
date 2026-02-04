@@ -1,0 +1,5 @@
+aaaa ICON "ikona_1.ico"
+
+#include "wx/msw/rcdefs.h"
+#define WX_S_MANIFEST 1
+#include "wx/msw/wx.rc"

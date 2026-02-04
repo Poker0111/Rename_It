@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/msw/wx.rc
+windows.h
+-
+wx/msw/rcdefs.h
+D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/msw/wx/msw/rcdefs.h
+
+D:/biblioteki_kod/wxWidgets-3.3.1/lib/gcc_lib/mswu/wx/msw/rcdefs.h
+
+E:/kody/project/5test/resources/resource.rc
+wx/msw/rcdefs.h
+E:/kody/project/5test/resources/wx/msw/rcdefs.h
+wx/msw/wx.rc
+E:/kody/project/5test/resources/wx/msw/wx.rc
+

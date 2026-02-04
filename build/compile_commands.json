@@ -1,0 +1,20 @@
+[
+{
+  "directory": "E:/kody/project/5test/build",
+  "command": "D:\\programy\\MSYS2\\mingw64\\bin\\g++.exe -DUNICODE -D_UNICODE @CMakeFiles/Rename_It-1.0.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\Rename_It-1.0.dir\\src\\App.cpp.obj -c E:\\kody\\project\\5test\\src\\App.cpp",
+  "file": "E:/kody/project/5test/src/App.cpp",
+  "output": "CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj"
+},
+{
+  "directory": "E:/kody/project/5test/build",
+  "command": "D:\\programy\\MSYS2\\mingw64\\bin\\g++.exe -DUNICODE -D_UNICODE @CMakeFiles/Rename_It-1.0.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\Rename_It-1.0.dir\\src\\MainFrame.cpp.obj -c E:\\kody\\project\\5test\\src\\MainFrame.cpp",
+  "file": "E:/kody/project/5test/src/MainFrame.cpp",
+  "output": "CMakeFiles/Rename_It-1.0.dir/src/MainFrame.cpp.obj"
+},
+{
+  "directory": "E:/kody/project/5test/build",
+  "command": "D:\\programy\\MSYS2\\mingw64\\bin\\g++.exe -DUNICODE -D_UNICODE @CMakeFiles/Rename_It-1.0.dir/includes_CXX.rsp -O3 -DNDEBUG -std=gnu++17 -o CMakeFiles\\Rename_It-1.0.dir\\src\\tasks.cpp.obj -c E:\\kody\\project\\5test\\src\\tasks.cpp",
+  "file": "E:/kody/project/5test/src/tasks.cpp",
+  "output": "CMakeFiles/Rename_It-1.0.dir/src/tasks.cpp.obj"
+}
+]
