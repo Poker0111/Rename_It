@@ -27,7 +27,7 @@ int getSeasonEpisode(const string &fileName) {// Extract episode number from the
 			if (word.find("E") != std::string::npos && word.size() > 1) {
 				// Check for S0XE0X format (where E is followed by numbers)
 				string substr = word.substr(word.size() - 2, word.size() - 1); 
-				
+				cout<<word<<endl;
 				if (isAllNumbers(substr)) {//chcek for letters
 					return stoi(substr);
 				}
@@ -42,6 +42,7 @@ int getSeasonEpisode(const string &fileName) {// Extract episode number from the
 	// Fallback: check for any 1-2 digit number standalone
 	for (const char letter: fileName) {
 		if (letter == ' ' || letter == '.' || letter == '-' || letter == '_') {
+			cout<<word<<endl;
 			if (isAllNumbers(word) && !word.empty() && word.size() <= 2)
 				return stoi(word);
 			
@@ -49,6 +50,11 @@ int getSeasonEpisode(const string &fileName) {// Extract episode number from the
 		} else
 			word += letter;
 	}
+
+	if (!word.empty() && isAllNumbers(word) && word.size() <= 2) {
+    return stoi(word);
+	}
+	
 	return -1;
 }
 
@@ -74,7 +80,7 @@ int getSeasonNumber(const string &fileName) {
 // Core function to rename a single file
 void renameFile(const fs::path &path, const fs::path& originalFile, const int seasonNumber, const wstring &name,const wstring &lang) {//rename the file
 	int episodeNumber = getSeasonEpisode(originalFile.string()); //get eps number
-	
+
 	// Format numbers to 2 digits (e.g., 1 -> 01)
 	std::wstring s_str = (seasonNumber < 10) ? L"0" + std::to_wstring(seasonNumber) : std::to_wstring(seasonNumber);//if eps is less then 10 for S0X if not SXX
 	std::wstring e_str = (episodeNumber < 10) ? L"0" + std::to_wstring(episodeNumber) : std::to_wstring(episodeNumber);//same as before
@@ -86,7 +92,7 @@ void renameFile(const fs::path &path, const fs::path& originalFile, const int se
 	newname+= originalFile.extension().wstring();
 
 	fs::path newpath = path / newname; //create new path
-
+	wcout<<originalFile<<L"->"<<newpath<<endl;
 	rename(originalFile, newpath);//rename path
 }
 
