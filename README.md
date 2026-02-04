@@ -3,7 +3,7 @@
 **Rename_It** is a lightweight C++ GUI application designed for fast and efficient batch renaming of anime and media files, specifically optimized for **Jellyfin** library standards.
 
 ##  Key Features
-- **Jellyfin Compatibility:** Automatically formats files to the `Title - S01E01` standard.
+- **Jellyfin Compatibility:** Automatically formats files to the `Title S01E01` standard.
 - **Broad Format Support:** - **Video:** `.mkv`, `.mp4` (can be easly change in code)
   - **Subtitles:** `.srt`, `.ass`
 - **Smart Subtitle Tagging:** Easily append custom language codes to subtitle files (e.g., `episode.pl.srt`).
