@@ -39,7 +39,7 @@ Name/
 
 ### Linux (Arch / Manjaro / EndeavourOS)
 !!!To run the application on Linux, you must have the wxWidgets runtime libraries installed.
-1.just download the file from **Releases** called `Rename_It-linux_x64`
+1.just download the file from **Releases** called `Rename_It-linux_x64`(I don't really know if it's needed my friend told me to)(if not please inform me)
 
 ##  Roadmap & Future Plans
 - [ ] **Live Preview Checklist:** A list view allowing users to check/uncheck specific files and see exactly what the new filename will look like before applying changes.
