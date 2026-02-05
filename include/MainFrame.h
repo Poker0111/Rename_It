@@ -31,6 +31,7 @@ private:
     wxButton* button2;
     wxButton* button3;
     wxString filepath;
+    wxStaticText* pathtext;
 
     wxFont mainFont;
     wxFont jpFont;

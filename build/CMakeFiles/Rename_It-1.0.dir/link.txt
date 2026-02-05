@@ -1,3 +1,0 @@
-D:\biblioteki_kod\cmake\bin\cmake.exe -E rm -f CMakeFiles\Rename_It-1.0.dir/objects.a
-D:\programy\MSYS2\mingw64\bin\ar.exe qc CMakeFiles\Rename_It-1.0.dir/objects.a @CMakeFiles\Rename_It-1.0.dir\objects1.rsp
-D:\programy\MSYS2\mingw64\bin\g++.exe -O3 -DNDEBUG -mwindows -Wl,--whole-archive CMakeFiles\Rename_It-1.0.dir/objects.a -Wl,--no-whole-archive -o Rename_It-1.0.exe -Wl,--out-implib,libRename_It-1.0.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Rename_It-1.0.dir\linkLibs.rsp
