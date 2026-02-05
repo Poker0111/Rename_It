@@ -4,6 +4,7 @@
 #include <string>
 #include <algorithm>
 #include <fcntl.h>
+#include <vector>
 
 using namespace std;
 namespace fs = std::filesystem;
@@ -78,7 +79,7 @@ int getSeasonNumber(const string &fileName) {
 }
 
 // Core function to rename a single file
-void renameFile(const fs::path &path, const fs::path& originalFile, const int seasonNumber, const wstring &name,const wstring &lang) {//rename the file
+void renameFile(const fs::path &path, const fs::path& originalFile, const int seasonNumber, const wstring &name,const wstring &lang,vector<pair<fs::path, fs::path>> &names) {//rename the file
 	int episodeNumber = getSeasonEpisode(originalFile.string()); //get eps number
 
 	// Format numbers to 2 digits (e.g., 1 -> 01)
@@ -92,12 +93,14 @@ void renameFile(const fs::path &path, const fs::path& originalFile, const int se
 	newname+= originalFile.extension().wstring();
 
 	fs::path newpath = path / newname; //create new path
-	wcout<<originalFile<<L"->"<<newpath<<endl;
+	
+	names.push_back({originalFile,newpath});
+
 	rename(originalFile, newpath);//rename path
 }
 
 // Rename all supported files within a specific folder
-void renameFolder(const fs::path &path, const int seasonNumber, const wstring &name,const wstring &lang) {
+void renameFolder(const fs::path &path, const int seasonNumber, const wstring &name,const wstring &lang,vector<pair<fs::path, fs::path>> &names) {
 	if (!fs::exists(path)) {
 		cerr << "Error: Path does not exist! (" << path << ")" << endl;
 		return;
@@ -112,13 +115,13 @@ void renameFolder(const fs::path &path, const int seasonNumber, const wstring &n
 	for (const auto &entry: fs::directory_iterator(path)) {
 		std::wstring ext = entry.path().extension().wstring();
 		if (ext==L".mkv"||ext==L".mp4"||ext==L".srt"||ext==L".ass") {
-			renameFile(path, entry.path(), seasonNumber, name,lang);
+			renameFile(path, entry.path(), seasonNumber, name,lang,names);
 		}
 	}
 }
 
 // Recursively process the main directory
-int renameRecursive(const fs::path &path, const wstring &name,const wstring &lang) {//check the main folder 
+int renameRecursive(const fs::path &path, const wstring &name,const wstring &lang,vector<pair<fs::path, fs::path>> &names) {//check the main folder 
 	if (!fs::exists(path)) {//check
 		cout << "Error: Directory not found." << endl;
 		return -1;
@@ -135,11 +138,11 @@ int renameRecursive(const fs::path &path, const wstring &name,const wstring &lan
 
 			// Rename files in the root folder (default to Season 1)
 			if(ext==L".mkv"||ext==L".mp4"||ext==L".srt"||ext==L".ass")
-				renameFile(path, file.path(), 1, name,lang);
+				renameFile(path, file.path(), 1, name,lang,names);
 		} else {
 			// Process subfolders as seasons
 			const int seasonNumber = getSeasonNumber(fs::path(file.path()).filename().string());
-			renameFolder(file.path(), seasonNumber, name,lang);
+			renameFolder(file.path(), seasonNumber, name,lang,names);
 		}
 	}
 
@@ -163,10 +166,11 @@ wstring getname(fs::path path){
 
 // Entry point for the renaming process
 void start(const fs::path &path,const wstring &lang){
+	vector<pair<fs::path, fs::path>>nazwy;
 	wstring nazwa=getname(path);
 	std::wstring pathStr = path.wstring();
 	// Normalize path separators for cross-platform compatibility
     std::replace(pathStr.begin(), pathStr.end(), L'\\', L'/');
 	fs::path cleanPath(pathStr);
-	renameRecursive(cleanPath,nazwa,lang);
+	renameRecursive(cleanPath,nazwa,lang,nazwy);
 }
