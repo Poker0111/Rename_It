@@ -165,12 +165,17 @@ wstring getname(fs::path path){
 }
 
 // Entry point for the renaming process
-void start(const fs::path &path,const wstring &lang){
-	vector<pair<fs::path, fs::path>>nazwy;
+void start(const fs::path &path,const wstring &lang,vector<pair<fs::path, fs::path>> &nazwy){
 	wstring nazwa=getname(path);
 	std::wstring pathStr = path.wstring();
 	// Normalize path separators for cross-platform compatibility
     std::replace(pathStr.begin(), pathStr.end(), L'\\', L'/');
 	fs::path cleanPath(pathStr);
 	renameRecursive(cleanPath,nazwa,lang,nazwy);
+}
+
+void UndoAll(std::vector<std::pair<fs::path, fs::path>> &names)
+{
+	for(const auto [old,news]:names)
+		rename(news,old);
 }

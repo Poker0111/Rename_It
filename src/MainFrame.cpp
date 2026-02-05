@@ -4,6 +4,7 @@
 #include <wx/confbase.h>
 #include <wx/fileconf.h>
 #include <wx/font.h>
+#include <filesystem>
 #include "MainFrame.h" 
 #include "tasks.h"
 
@@ -73,7 +74,7 @@ void MainFrame::bine()//bind controls to events
     Bind(wxEVT_MENU, &MainFrame::OnLangChange, this, menuids::lang1);
     Bind(wxEVT_MENU, &MainFrame::OnLangChange, this, menuids::lang2);
     Bind(wxEVT_MENU, &MainFrame::OnLangChange, this, menuids::lang3);
-    
+    Bind(wxEVT_MENU, &MainFrame::OnUndo, this, wxID_UNDO);
 }
 
 void MainFrame::menubar()//add menu bar with language radio items
@@ -85,7 +86,11 @@ void MainFrame::menubar()//add menu bar with language radio items
     item_pl = custom->AppendRadioItem(menuids::lang1, "Polski");
     item_jp = custom->AppendRadioItem(menuids::lang2, wxT("日本語"));
     
+    Undo=new wxMenu();
+    undoItem = Undo->Append(wxID_UNDO, "&Undo\tCtrl+Z");
+
     item_en->Check(true);// Default to English
+    menu->Append(Undo,"Edit");
     menu->Append(custom, "Language");
 
     SetMenuBar(menu);
@@ -124,8 +129,8 @@ void MainFrame::term(wxCommandEvent &evt)//rename files and show message with in
 
     if(filepath.IsEmpty()) {
        wxString msg, title;
-        if(currentLang == 0) { msg = "Najpierw wybierz folder!"; title = "Błąd"; }
-        else if(currentLang==1) { msg = "最初にフォルダを選択してください！"; title = "エラー"; }
+        if(currentLang == 0) { msg = wxT("Najpierw wybierz folder!"); title = wxT("Błąd"); }
+        else if(currentLang==1) { msg = wxT("最初にフォルダを選択してください！"); title = wxT("エラー"); }
         else{msg="Please choose a folder first!";title="Error";}
         
         wxMessageBox(msg, title, wxOK | wxICON_ERROR);
@@ -134,7 +139,7 @@ void MainFrame::term(wxCommandEvent &evt)//rename files and show message with in
     else{
         std::wstring widePath = filepath.ToStdWstring();
         std::wstring wideName = text1->GetValue().ToStdWstring();
-        start(widePath,wideName);
+        start(widePath,wideName,Names_files);
     }
     wxString info, boxTitle,question;
 
@@ -162,6 +167,28 @@ if (answer == wxYES) {
 }
 }
 
+void MainFrame::OnUndo(wxCommandEvent&evt)
+{
+    if (Names_files.empty()) {
+        wxString msg, title;
+        if(currentLang == 0) { msg = wxT("Brak zmian do cofnięcia"); title = wxT("Informacja"); }
+        else if(currentLang==1) { msg = wxT("元に戻す変更はありません"); title = wxT("情報"); }
+        else{msg="No changes to undo";title="Info";}
+        wxMessageBox(msg, title, wxOK | wxICON_ERROR);
+        return;
+    }
+
+    UndoAll(Names_files);
+    Names_files.clear();
+    Names_files.shrink_to_fit();
+
+    wxString msg1, title1;
+        if(currentLang == 0) { msg1 = wxT("cofnięto nazwy wszytkim plikom"); title1 = wxT("Informacja"); }
+        else if(currentLang==1) { msg1 = wxT("すべてのファイル名が元に戻されました"); title1 = wxT("情報"); }
+        else{msg1="All file names have been reverted";title1="Info";}
+    wxMessageBox(msg1, title1, wxOK);
+}
+
 void MainFrame::UpdateLanguage() // Update UI labels based on selected language
 {
     if(currentLang==0){
@@ -174,7 +201,9 @@ void MainFrame::UpdateLanguage() // Update UI labels based on selected language
         button1->SetLabel(wxT("Wybierz folder"));
         pathtext->SetLabel(wxT("Ścieszka:"+filepath));
         button2->SetLabel(wxT("Zastosuj"));
-        menu->SetMenuLabel(0, wxT("Język"));
+        menu->SetMenuLabel(1, wxT("Język"));
+        menu->SetMenuLabel(0, wxT("Edytuj"));
+        undoItem->SetItemLabel(wxT("Cofnij"));
         item_pl->Check(true);
     }
     else if(currentLang==1){
@@ -190,7 +219,9 @@ void MainFrame::UpdateLanguage() // Update UI labels based on selected language
         button1->SetLabel(wxT("フォルダを選択"));
         pathtext->SetLabel(wxT("フォルダ:"+textPath));
         button2->SetLabel(wxT("適用する"));
-        menu->SetMenuLabel(0, wxT("言語"));
+        menu->SetMenuLabel(1, wxT("言語"));
+        menu->SetMenuLabel(0, wxT("編集"));
+        undoItem->SetItemLabel(wxT("元に戻す"));
         item_jp->Check(true);
     }
     else{
@@ -203,7 +234,9 @@ void MainFrame::UpdateLanguage() // Update UI labels based on selected language
         button1->SetLabel(wxT("Choose Folder"));
         pathtext->SetLabel(wxT("Path:"+filepath));
         button2->SetLabel(wxT("Apply"));
-        menu->SetMenuLabel(0, wxT("Language"));
+        menu->SetMenuLabel(1, wxT("Language"));
+        menu->SetMenuLabel(0, wxT("Edit"));
+        undoItem->SetItemLabel(wxT("Undo"));
         item_en->Check(true);
     }
     paneltop->Layout();

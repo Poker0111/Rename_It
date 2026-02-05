@@ -1,8 +1,10 @@
 #ifndef MAINFRAME_H
-#define MAINFRAME_H
+#define MAINFRAMe_H
 #include<wx/wx.h>
+#include <vector>
+#include <filesystem>
 
-
+namespace fs = std::filesystem; 
 
 #pragma once
 
@@ -19,6 +21,7 @@ private:
 
     void file(wxCommandEvent&evt);
     void term(wxCommandEvent&evt);
+    void OnUndo(wxCommandEvent&evt);
 
     void UpdateLanguage();
     void OnLangChange(wxCommandEvent& evt);
@@ -42,5 +45,11 @@ private:
     wxMenuItem* item_pl;
     wxMenuItem* item_jp;
     wxMenuItem* item_en;
+
+    wxMenu* Undo;
+    wxMenuItem* undoItem;
+
+
+    std::vector<std::pair<fs::path,fs::path>>Names_files;
 };
 #endif
