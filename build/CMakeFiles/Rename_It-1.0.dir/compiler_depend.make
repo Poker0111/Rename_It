@@ -270,6 +270,8 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj: E:/kody/project/5test/src/App.cpp 
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/basic_string.tcc \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/char_traits.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/charconv.h \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/chrono.h \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/codecvt.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/concept_check.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/cpp_type_traits.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/cxxabi_forced.h \
@@ -279,6 +281,10 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj: E:/kody/project/5test/src/App.cpp 
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/exception.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/exception_defines.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/exception_ptr.h \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_dir.h \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_fwd.h \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_ops.h \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_path.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/functexcept.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/functional_hash.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/hash_bytes.h \
@@ -290,8 +296,11 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj: E:/kody/project/5test/src/App.cpp 
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/list.tcc \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_classes.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_classes.tcc \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_conv.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_facets.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_facets.tcc \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_facets_nonio.h \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_facets_nonio.tcc \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/localefwd.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/memory_resource.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/memoryfwd.h \
@@ -302,9 +311,11 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj: E:/kody/project/5test/src/App.cpp 
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/ostream.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/ostream.tcc \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/ostream_insert.h \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/parse_numbers.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/postypes.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/predefined_ops.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/ptr_traits.h \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/quoted_string.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/range_access.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/refwrap.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/requires_hosted.h \
@@ -312,6 +323,7 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj: E:/kody/project/5test/src/App.cpp 
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/shared_ptr_atomic.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/shared_ptr_base.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/specfun.h \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/sstream.tcc \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/std_abs.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/std_function.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/stl_algo.h \
@@ -347,12 +359,15 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj: E:/kody/project/5test/src/App.cpp 
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/cerrno \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/clocale \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/cmath \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/codecvt \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/compare \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/concepts \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/cstddef \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/cstdint \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/cstdio \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/cstdlib \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/cstring \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/ctime \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/cwchar \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/cwctype \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/debug/assertions.h \
@@ -365,8 +380,10 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj: E:/kody/project/5test/src/App.cpp 
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/ext/numeric_traits.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/ext/string_conversions.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/ext/type_traits.h \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/filesystem \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/functional \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/initializer_list \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/iomanip \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/ios \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/iosfwd \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/iostream \
@@ -374,6 +391,7 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj: E:/kody/project/5test/src/App.cpp 
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/iterator \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/limits \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/list \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/locale \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/math.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/memory \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/new \
@@ -382,6 +400,8 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj: E:/kody/project/5test/src/App.cpp 
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/pstl/glue_algorithm_defs.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/pstl/glue_memory_defs.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/pstl/pstl_config.h \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/ratio \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/sstream \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/stdexcept \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/stdlib.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/streambuf \
@@ -416,7 +436,9 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj: E:/kody/project/5test/src/App.cpp 
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/error_constants.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr-default.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr.h \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/messages_members.h \
   D:/programy/MSYS2/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h \
+  D:/programy/MSYS2/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/time_members.h \
   D:/programy/MSYS2/mingw64/include/cderr.h \
   D:/programy/MSYS2/mingw64/include/cguid.h \
   D:/programy/MSYS2/mingw64/include/combaseapi.h \
@@ -541,6 +563,7 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj: E:/kody/project/5test/src/App.cpp 
   D:/programy/MSYS2/mingw64/include/specstrings.h \
   D:/programy/MSYS2/mingw64/include/stdarg.h \
   D:/programy/MSYS2/mingw64/include/stddef.h \
+  D:/programy/MSYS2/mingw64/include/stdint.h \
   D:/programy/MSYS2/mingw64/include/stdio.h \
   D:/programy/MSYS2/mingw64/include/stdlib.h \
   D:/programy/MSYS2/mingw64/include/stralign.h \
@@ -700,6 +723,7 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj: E:/kody/project/5test/src/App.cpp 
   D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/smmintrin.h \
   D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
   D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h \
+  D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h \
   D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h \
   D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/tbmintrin.h \
   D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/tmmintrin.h \
@@ -1708,13 +1732,13 @@ D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/accel.h:
 
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/any.h:
 
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/time_members.h:
-
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/chrono.h:
-
 D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/sm4intrin.h:
 
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/anybutton.h:
+
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/chrono.h:
+
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/time_members.h:
 
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/eventfilter.h:
 
@@ -1796,9 +1820,9 @@ D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512vnniin
 
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/beforestd.h:
 
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/codecvt.h:
-
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/fontenc.h:
+
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/codecvt.h:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/version.h:
 
@@ -1846,9 +1870,9 @@ D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/button.h:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/streambuf.tcc:
 
-D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/chartype.h:
-
 D:/programy/MSYS2/mingw64/include/profileapi.h:
+
+D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/chartype.h:
 
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/checkbox.h:
 
@@ -1886,17 +1910,17 @@ D:/programy/MSYS2/mingw64/include/c++/15.2.0/cerrno:
 
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/compiler.h:
 
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/iomanip:
-
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/compositewin.h:
+
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/iomanip:
 
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/containr.h:
 
 D:/programy/MSYS2/mingw64/include/winapifamily.h:
 
-D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/dc.h:
-
 D:/programy/MSYS2/mingw64/include/psdk_inc/_ip_types.h:
+
+D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/dc.h:
 
 D:/programy/MSYS2/mingw64/include/shellapi.h:
 
@@ -1948,9 +1972,9 @@ D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/base64.h:
 
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/features.h:
 
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/quoted_string.h:
-
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/intl.h:
+
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/quoted_string.h:
 
 D:/programy/MSYS2/mingw64/include/poppack.h:
 
@@ -2074,13 +2098,11 @@ D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/keylockerint
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/istream:
 
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_ops.h:
-
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/iosfwrap.h:
 
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/listbox.h:
 
-D:/programy/MSYS2/mingw64/include/psdk_inc/_socket_types.h:
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_ops.h:
 
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/ioswrap.h:
 
@@ -2226,9 +2248,9 @@ D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/msw/libraries.h:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/ext/numeric_traits.h:
 
-D:/programy/MSYS2/mingw64/include/malloc.h:
-
 D:/programy/MSYS2/mingw64/include/pshpack2.h:
+
+D:/programy/MSYS2/mingw64/include/malloc.h:
 
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/msw/listbox.h:
 
@@ -2237,6 +2259,8 @@ D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/msw/menuitem.h:
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/msw/mdi.h:
 
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/msw/menu.h:
+
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/locale:
 
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/msw/msgdlg.h:
 
@@ -2372,9 +2396,9 @@ D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/vpclmulqdqin
 
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/rtti.h:
 
-D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/settings.h:
-
 D:/programy/MSYS2/mingw64/include/pshpack4.h:
+
+D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/settings.h:
 
 D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/ia32intrin.h:
 
@@ -2458,9 +2482,9 @@ D:/programy/MSYS2/mingw64/include/winbase.h:
 
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/validate.h:
 
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/messages_members.h:
-
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/vector.h:
+
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/messages_members.h:
 
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/version.h:
 
@@ -2552,11 +2576,11 @@ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/algorithmfwd.h:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/align.h:
 
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/allocated_ptr.h:
+D:/programy/MSYS2/mingw64/include/heapapi.h:
 
 D:/programy/MSYS2/mingw64/include/pthread_time.h:
 
-D:/programy/MSYS2/mingw64/include/heapapi.h:
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/allocated_ptr.h:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/basic_ios.h:
 
@@ -2570,6 +2594,18 @@ D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx10_2minma
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/exception_defines.h:
 
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_facets_nonio.tcc:
+
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_dir.h:
+
+D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/textbuf.h:
+
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_fwd.h:
+
+D:/programy/MSYS2/mingw64/include/windows.h:
+
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_path.h:
+
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/functexcept.h:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/pstl/glue_memory_defs.h:
@@ -2582,7 +2618,15 @@ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/hashtable_policy.h:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_classes.tcc:
 
+D:/programy/MSYS2/mingw64/include/psdk_inc/_fd_types.h:
+
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_conv.h:
+
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_facets.tcc:
+
+D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512vldqintrin.h:
+
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_facets_nonio.h:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/localefwd.h:
 
@@ -2606,6 +2650,8 @@ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/node_handle.h:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/ostream_insert.h:
 
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/parse_numbers.h:
+
 D:/programy/MSYS2/mingw64/include/sys/types.h:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/postypes.h:
@@ -2626,9 +2672,11 @@ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/specfun.h:
 
 D:/programy/MSYS2/mingw64/include/processenv.h:
 
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/std_abs.h:
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/sstream.tcc:
 
 D:/programy/MSYS2/mingw64/include/propidl.h:
+
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/std_abs.h:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/std_function.h:
 
@@ -2662,15 +2710,15 @@ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/stl_uninitialized.h:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/stream_iterator.h:
 
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/ctime:
-
 D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avxvnniintrin.h:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/string_view.tcc:
 
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/filesystem:
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/ctime:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/stringfwd.h:
+
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/filesystem:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/uniform_int_dist.h:
 
@@ -2680,13 +2728,25 @@ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/uses_allocator.h:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/vector.tcc:
 
+D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/fxsrintrin.h:
+
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/ratio:
+
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/cmath:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/memory:
 
+D:/programy/MSYS2/mingw64/include/dde.h:
+
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/codecvt:
+
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/concepts:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/cstddef:
+
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/cstdint:
+
+D:/programy/MSYS2/mingw64/include/errno.h:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/cstring:
 
@@ -2718,11 +2778,11 @@ D:/programy/MSYS2/mingw64/include/specstrings.h:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/limits:
 
+D:/programy/MSYS2/mingw64/include/realtimeapiset.h:
+
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/list:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/pstl/pstl_config.h:
-
-D:/programy/MSYS2/mingw64/include/realtimeapiset.h:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/pstl/glue_algorithm_defs.h:
 
@@ -2733,6 +2793,10 @@ D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512bitalg
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/new:
 
 D:/programy/MSYS2/mingw64/include/c++/15.2.0/ostream:
+
+D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx2intrin.h:
+
+D:/programy/MSYS2/mingw64/include/c++/15.2.0/sstream:
 
 D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/gfniintrin.h:
 
@@ -2824,17 +2888,11 @@ D:/programy/MSYS2/mingw64/include/corecrt_wstdlib.h:
 
 D:/programy/MSYS2/mingw64/include/ctype.h:
 
-D:/programy/MSYS2/mingw64/include/dde.h:
-
 E:/kody/project/5test/src/MainFrame.cpp:
 
 D:/programy/MSYS2/mingw64/include/dpapi.h:
 
 D:/programy/MSYS2/mingw64/include/driverspecs.h:
-
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/cstdint:
-
-D:/programy/MSYS2/mingw64/include/errno.h:
 
 D:/programy/MSYS2/mingw64/include/excpt.h:
 
@@ -2858,10 +2916,6 @@ D:/programy/MSYS2/mingw64/include/memoryapi.h:
 
 D:/programy/MSYS2/mingw64/include/minwinbase.h:
 
-D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512ifmaintrin.h:
-
-D:/programy/MSYS2/mingw64/include/pthread_compat.h:
-
 D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512vlbwintrin.h:
 
 D:/programy/MSYS2/mingw64/include/minwindef.h:
@@ -2881,8 +2935,6 @@ D:/programy/MSYS2/mingw64/include/mmsystem.h:
 D:/programy/MSYS2/mingw64/include/namedpipeapi.h:
 
 D:/programy/MSYS2/mingw64/include/namespaceapi.h:
-
-D:/programy/MSYS2/mingw64/include/pthread.h:
 
 D:/programy/MSYS2/mingw64/include/ncrypt.h:
 
@@ -2908,9 +2960,7 @@ D:/programy/MSYS2/mingw64/include/sched.h:
 
 D:/programy/MSYS2/mingw64/include/prsht.h:
 
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_conv.h:
-
-D:/programy/MSYS2/mingw64/include/psdk_inc/_fd_types.h:
+D:/programy/MSYS2/mingw64/include/psdk_inc/_socket_types.h:
 
 D:/programy/MSYS2/mingw64/include/psdk_inc/_ws1_undef.h:
 
@@ -2923,6 +2973,12 @@ D:/programy/MSYS2/mingw64/include/psdk_inc/intrin-impl.h:
 D:/programy/MSYS2/mingw64/include/pshpack1.h:
 
 D:/programy/MSYS2/mingw64/include/pshpack8.h:
+
+D:/programy/MSYS2/mingw64/include/pthread.h:
+
+D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512ifmaintrin.h:
+
+D:/programy/MSYS2/mingw64/include/pthread_compat.h:
 
 D:/programy/MSYS2/mingw64/include/pthread_signal.h:
 
@@ -2972,6 +3028,8 @@ D:/programy/MSYS2/mingw64/include/stdarg.h:
 
 D:/programy/MSYS2/mingw64/include/stddef.h:
 
+D:/programy/MSYS2/mingw64/include/stdint.h:
+
 D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/sgxintrin.h:
 
 D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx10_2-512minmaxintrin.h:
@@ -3003,10 +3061,6 @@ D:/programy/MSYS2/mingw64/include/wctype.h:
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/convauto.h:
 
 D:/programy/MSYS2/mingw64/include/wincon.h:
-
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_path.h:
-
-D:/programy/MSYS2/mingw64/include/windows.h:
 
 D:/programy/MSYS2/mingw64/include/winefs.h:
 
@@ -3068,10 +3122,6 @@ D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx10_2conve
 
 D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx10_2mediaintrin.h:
 
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/sstream:
-
-D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx2intrin.h:
-
 D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512dqintrin.h:
 
 D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512bf16intrin.h:
@@ -3087,10 +3137,6 @@ D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512fp16vl
 D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512ifmavlintrin.h:
 
 D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512vbmiintrin.h:
-
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_facets_nonio.h:
-
-D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512vldqintrin.h:
 
 D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/avx512vnnivlintrin.h:
 
@@ -3115,10 +3161,6 @@ D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/clwbintrin.h
 D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/cmpccxaddintrin.h:
 
 D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/f16cintrin.h:
-
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/ratio:
-
-D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/fxsrintrin.h:
 
 D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/xopintrin.h:
 
@@ -3149,6 +3191,8 @@ D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/serializeint
 D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/shaintrin.h:
 
 D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/smmintrin.h:
+
+D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h:
 
 D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h:
 
@@ -3185,23 +3229,3 @@ D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/msw/regconf.h:
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/overlay.h:
 
 D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/splitter.h:
-
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_fwd.h:
-
-D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/textbuf.h:
-
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_dir.h:
-
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_facets_nonio.tcc:
-
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/parse_numbers.h:
-
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/sstream.tcc:
-
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/codecvt:
-
-D:/programy/MSYS2/mingw64/include/c++/15.2.0/locale:
-
-D:/programy/MSYS2/mingw64/include/stdint.h:
-
-D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h:

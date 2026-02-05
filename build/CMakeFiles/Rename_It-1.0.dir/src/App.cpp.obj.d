@@ -723,4 +723,28 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj: \
  D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/mdi.h \
  D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/msw/mdi.h \
  E:/kody/project/5test/include/App.h \
- E:/kody/project/5test/include/MainFrame.h
+ E:/kody/project/5test/include/MainFrame.h \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/filesystem \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_fwd.h \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/cstdint \
+ D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h \
+ D:/programy/MSYS2/mingw64/include/stdint.h \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/chrono.h \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/ratio \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/ctime \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/parse_numbers.h \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_path.h \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/locale \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_facets_nonio.h \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/time_members.h \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/messages_members.h \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/codecvt.h \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_facets_nonio.tcc \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_conv.h \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/iomanip \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/quoted_string.h \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/sstream \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/sstream.tcc \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/codecvt \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_dir.h \
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_ops.h

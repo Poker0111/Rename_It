@@ -736,8 +736,6 @@ CMakeFiles/Rename_It-1.0.dir/src/MainFrame.cpp.obj: \
  D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/convauto.h \
  D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/file.h \
  D:/biblioteki_kod/wxWidgets-3.3.1/include/wx/filename.h \
- E:/kody/project/5test/include/MainFrame.h \
- E:/kody/project/5test/include/tasks.h \
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/filesystem \
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_fwd.h \
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/cstdint \
@@ -761,4 +759,6 @@ CMakeFiles/Rename_It-1.0.dir/src/MainFrame.cpp.obj: \
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/sstream.tcc \
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/codecvt \
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_dir.h \
- D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_ops.h
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_ops.h \
+ E:/kody/project/5test/include/MainFrame.h \
+ E:/kody/project/5test/include/tasks.h

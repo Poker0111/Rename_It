@@ -271,6 +271,8 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/basic_string.tcc
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/char_traits.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/charconv.h
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/chrono.h
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/codecvt.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/concept_check.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/cpp_type_traits.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/cxxabi_forced.h
@@ -280,6 +282,10 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/exception.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/exception_defines.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/exception_ptr.h
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_dir.h
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_fwd.h
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_ops.h
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/fs_path.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/functexcept.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/functional_hash.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/hash_bytes.h
@@ -291,8 +297,11 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/list.tcc
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_classes.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_classes.tcc
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_conv.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_facets.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_facets.tcc
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_facets_nonio.h
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/locale_facets_nonio.tcc
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/localefwd.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/memory_resource.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/memoryfwd.h
@@ -303,9 +312,11 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/ostream.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/ostream.tcc
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/ostream_insert.h
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/parse_numbers.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/postypes.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/predefined_ops.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/ptr_traits.h
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/quoted_string.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/range_access.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/refwrap.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/requires_hosted.h
@@ -313,6 +324,7 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/shared_ptr_atomic.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/shared_ptr_base.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/specfun.h
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/sstream.tcc
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/std_abs.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/std_function.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/bits/stl_algo.h
@@ -348,12 +360,15 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/cerrno
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/clocale
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/cmath
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/codecvt
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/compare
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/concepts
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/cstddef
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/cstdint
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/cstdio
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/cstdlib
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/cstring
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/ctime
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/cwchar
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/cwctype
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/debug/assertions.h
@@ -366,8 +381,10 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/ext/numeric_traits.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/ext/string_conversions.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/ext/type_traits.h
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/filesystem
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/functional
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/initializer_list
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/iomanip
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/ios
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/iosfwd
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/iostream
@@ -375,6 +392,7 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/iterator
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/limits
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/list
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/locale
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/math.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/memory
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/new
@@ -383,6 +401,8 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/pstl/glue_algorithm_defs.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/pstl/glue_memory_defs.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/pstl/pstl_config.h
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/ratio
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/sstream
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/stdexcept
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/stdlib.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/streambuf
@@ -417,7 +437,9 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/error_constants.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr-default.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/gthr.h
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/messages_members.h
  D:/programy/MSYS2/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/os_defines.h
+ D:/programy/MSYS2/mingw64/include/c++/15.2.0/x86_64-w64-mingw32/bits/time_members.h
  D:/programy/MSYS2/mingw64/include/cderr.h
  D:/programy/MSYS2/mingw64/include/cguid.h
  D:/programy/MSYS2/mingw64/include/combaseapi.h
@@ -542,6 +564,7 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj
  D:/programy/MSYS2/mingw64/include/specstrings.h
  D:/programy/MSYS2/mingw64/include/stdarg.h
  D:/programy/MSYS2/mingw64/include/stddef.h
+ D:/programy/MSYS2/mingw64/include/stdint.h
  D:/programy/MSYS2/mingw64/include/stdio.h
  D:/programy/MSYS2/mingw64/include/stdlib.h
  D:/programy/MSYS2/mingw64/include/stralign.h
@@ -701,6 +724,7 @@ CMakeFiles/Rename_It-1.0.dir/src/App.cpp.obj
  D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/smmintrin.h
  D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h
  D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stddef.h
+ D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdint.h
  D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/syslimits.h
  D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/tbmintrin.h
  D:/programy/MSYS2/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/tmmintrin.h
