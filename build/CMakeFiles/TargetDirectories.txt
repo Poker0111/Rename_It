@@ -1,3 +1,0 @@
-E:/kody/project/5test/build/CMakeFiles/Rename_It-1.0.dir
-E:/kody/project/5test/build/CMakeFiles/edit_cache.dir
-E:/kody/project/5test/build/CMakeFiles/rebuild_cache.dir
