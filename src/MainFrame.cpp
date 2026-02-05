@@ -139,7 +139,7 @@ void MainFrame::term(wxCommandEvent &evt)//rename files and show message with in
     else{
         std::wstring widePath = filepath.ToStdWstring();
         std::wstring wideName = text1->GetValue().ToStdWstring();
-        start(widePath,wideName,Names_files);
+        start(widePath,wideName,Names_files);//Names_files is a vectro<pair<path,path>> for old and new names of files
     }
     wxString info, boxTitle,question;
 
@@ -169,7 +169,7 @@ if (answer == wxYES) {
 
 void MainFrame::OnUndo(wxCommandEvent&evt)
 {
-    if (Names_files.empty()) {
+    if (Names_files.empty()) {//if in vector is empty 
         wxString msg, title;
         if(currentLang == 0) { msg = wxT("Brak zmian do cofnięcia"); title = wxT("Informacja"); }
         else if(currentLang==1) { msg = wxT("元に戻す変更はありません"); title = wxT("情報"); }
@@ -178,11 +178,11 @@ void MainFrame::OnUndo(wxCommandEvent&evt)
         return;
     }
 
-    UndoAll(Names_files);
-    Names_files.clear();
+    UndoAll(Names_files);//undo all renames
+    Names_files.clear();//clear vector and resize it
     Names_files.shrink_to_fit();
 
-    wxString msg1, title1;
+    wxString msg1, title1;//message for correct undo
         if(currentLang == 0) { msg1 = wxT("cofnięto nazwy wszytkim plikom"); title1 = wxT("Informacja"); }
         else if(currentLang==1) { msg1 = wxT("すべてのファイル名が元に戻されました"); title1 = wxT("情報"); }
         else{msg1="All file names have been reverted";title1="Info";}

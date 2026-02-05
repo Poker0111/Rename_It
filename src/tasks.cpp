@@ -94,7 +94,7 @@ void renameFile(const fs::path &path, const fs::path& originalFile, const int se
 
 	fs::path newpath = path / newname; //create new path
 	
-	names.push_back({originalFile,newpath});
+	names.push_back({originalFile,newpath});//push back old and new names for undo funcion and check list
 
 	rename(originalFile, newpath);//rename path
 }
@@ -174,7 +174,7 @@ void start(const fs::path &path,const wstring &lang,vector<pair<fs::path, fs::pa
 	renameRecursive(cleanPath,nazwa,lang,nazwy);
 }
 
-void UndoAll(std::vector<std::pair<fs::path, fs::path>> &names)
+void UndoAll(std::vector<std::pair<fs::path, fs::path>> &names)//undo all renames
 {
 	for(const auto [old,news]:names)
 		rename(news,old);
