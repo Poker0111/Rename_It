@@ -17,9 +17,13 @@ namespace menuids{
 
 MainFrame::MainFrame(const wxString& title): wxFrame(nullptr,wxID_ANY,title)
 {
-    #ifdef _WIN32
-        SetIcon(wxICON(aaaa));
-    #endif
+#ifdef _WIN32
+    SetIcon(wxICON(aaaa));
+#endif
+#ifdef __linux__
+#include "ikona_1.xpm"
+    SetIcon(wxIcon(b6babdf68ed54392f858693582d66feecjZN8ofwqdP7YHhE));
+#endif
     menubar();//create all controls
     create();
     Font();
