@@ -1,1 +1,3 @@
-echo build/ > .gitignore
+build
+cmake-build-debug
+.idea
