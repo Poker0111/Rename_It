@@ -8,6 +8,7 @@
   - **Subtitles:** `.srt`, `.ass`
 - **Smart Subtitle Tagging:** Easily append custom language codes to subtitle files (e.g., `episode.pl.srt`).
 - all of formats or file extension can be change
+- Can undo all changes in files names
 
 ##  How It Works
 1. **Subtitles:** If you have subtitle files, you can add a language extension (e.g., `en`, `pl`) in the app.
@@ -33,16 +34,19 @@ Name/
 
 ### Windows (Recommended)
 1. Go to the **Releases** tab on this GitHub repository.
-2. Download the `Rename_It-Windows.zip` archive.
-3. Extract it anywhere and run `Rename_It.exe`.
+2. Download the `Rename_It-Windows.exe` archive.
    *Note: No installation is required; all libraries are statically linked.*
 
-### Linux (Arch / Manjaro / EndeavourOS)
-!!!To run the application on Linux, you must have the wxWidgets runtime libraries installed.
-1.just download the file from **Releases** called `Rename_It-linux_x64`(I don't really know if it's needed my friend told me to)(if not please inform me)
+### Linux
+1. Go to the **Releases** tab on this GitHub repository.
+2. Download the `Rename_It-linux_x64` executable.
+3. Run `chmod +x Rename_It-linux_x64` and  then to run `./Rename_It-linux_x64` '.
+   *Note: Wxwidgets packages may be required to be installed*
 
 ##  Roadmap & Future Plans
 - [ ] **Live Preview Checklist:** A list view allowing users to check/uncheck specific files and see exactly what the new filename will look like before applying changes.
 - [ ] **Undo Functionality:** One-click option to revert the last renaming operation and restore original filenames.
 - [ ] **Framework Migration:** Planned transition to **Qt** for a more modern UI
 - [ ] **macOS Support:** Native `.app` bundle releases.
+
+**Thanks for help @MAREKOR555**
