@@ -49,4 +49,4 @@ Name/
 - [ ] **Framework Migration:** Planned transition to **Qt** for a more modern UI
 - [ ] **macOS Support:** Native `.app` bundle releases.
 
-**Thanks for help @MAREKOR555**
+**Thanks for help [MAREKOR555](https://github.com/marekor555)**
