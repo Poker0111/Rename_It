@@ -52,5 +52,6 @@ private:
 
 
     std::vector<std::pair<fs::path,fs::path>>Names_files;
+    std::vector<std::pair<fs::path,fs::path>>Names_final;
 };
 #endif

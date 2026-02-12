@@ -132,13 +132,16 @@ void MainFrame::file(wxCommandEvent &evt)//open directory dialog to choose folde
     UpdateLanguage();
      std::wstring widePath = filepath.ToStdWstring();
     std::wstring wideName = text1->GetValue().ToStdWstring();
-    start(widePath,wideName,Names_files);
 
-    wxString fname;
+    Names_files.clear();//clear old names from temp vector
+    start(widePath,wideName,Names_files);//get new names for files
+    
+    checklist->Clear();//clear old list
+
     for(const auto [old,news]:Names_files){
-        wxString label = wxString::Format("%s -> %s", old.filename().wstring(), news.filename().wstring());
-        int index = checklist->Append(label);
-        checklist->Check(index, true);
+        wxString label = wxString::Format("%s -> %s", old.filename().wstring(), news.filename().wstring());//what will be in check list
+        int index = checklist->Append(label);//index for label
+        checklist->Check(index, true);//always checked
     }
 }
 
@@ -156,9 +159,19 @@ void MainFrame::term(wxCommandEvent &evt)//rename files and show message with in
         return;
     }
     else{
-        std::wstring widePath = filepath.ToStdWstring();
-        std::wstring wideName = text1->GetValue().ToStdWstring();
-        start(widePath,wideName,Names_files);//Names_files is a vectro<pair<path,path>> for old and new names of files
+        fs::path oldPath;
+        fs::path newPath;
+
+       for(unsigned int i = 0; i < checklist->GetCount(); i++){
+        if(checklist->IsChecked(i)){
+            oldPath=Names_files[i].first;
+            newPath=Names_files[i].second;
+
+            Names_final.push_back({oldPath,newPath});//push into new vector 
+        }
+    }
+
+    renameALL(Names_final);//rename all checked files
     }
     wxString info, boxTitle,question;
 
@@ -197,9 +210,9 @@ void MainFrame::OnUndo(wxCommandEvent&evt)
         return;
     }
 
-    UndoAll(Names_files);//undo all renames
-    Names_files.clear();//clear vector and resize it
-    Names_files.shrink_to_fit();
+    UndoAll(Names_final);//undo all renames
+    Names_final.clear();//clear vector and resize it
+    Names_final.shrink_to_fit();
 
     wxString msg1, title1;//message for correct undo
         if(currentLang == 0) { msg1 = wxT("cofnięto nazwy wszytkim plikom"); title1 = wxT("Informacja"); }

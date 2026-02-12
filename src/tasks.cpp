@@ -179,3 +179,9 @@ void UndoAll(std::vector<std::pair<fs::path, fs::path>> &names)//undo all rename
 	for(const auto [old,news]:names)
 		rename(news,old);
 }
+
+void renameALL(std::vector<std::pair<fs::path, fs::path>> &names)
+{
+	for(const auto [old,news]:names)
+		rename(old,news);
+}

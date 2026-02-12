@@ -19,6 +19,7 @@ void renameFolder(const fs::path &path, const int seasonNumber, const std::wstri
 void start(const std::filesystem::path &path, const std::wstring &name,std::vector<std::pair<fs::path, fs::path>> &names);
 
 void UndoAll(std::vector<std::pair<fs::path, fs::path>> &names);
+void renameALL(std::vector<std::pair<fs::path, fs::path>> &names);
 
 std::wstring getname(fs::path path);
 
