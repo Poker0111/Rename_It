@@ -96,7 +96,7 @@ void renameFile(const fs::path &path, const fs::path& originalFile, const int se
 	
 	names.push_back({originalFile,newpath});//push back old and new names for undo funcion and check list
 
-	rename(originalFile, newpath);//rename path
+	//rename(originalFile, newpath);//rename path
 }
 
 // Rename all supported files within a specific folder

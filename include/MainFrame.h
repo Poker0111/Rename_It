@@ -35,6 +35,7 @@ private:
     wxButton* button3;
     wxString filepath;
     wxStaticText* pathtext;
+    wxCheckListBox* checklist;
 
     wxFont mainFont;
     wxFont jpFont;
