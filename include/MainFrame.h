@@ -35,6 +35,7 @@ private:
     wxButton* button3;
     wxString filepath;
     wxStaticText* pathtext;
+    wxCheckListBox* checklist;
 
     wxFont mainFont;
     wxFont jpFont;
@@ -51,5 +52,6 @@ private:
 
 
     std::vector<std::pair<fs::path,fs::path>>Names_files;
+    std::vector<std::pair<fs::path,fs::path>>Names_final;
 };
 #endif

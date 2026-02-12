@@ -96,7 +96,7 @@ void renameFile(const fs::path &path, const fs::path& originalFile, const int se
 	
 	names.push_back({originalFile,newpath});//push back old and new names for undo funcion and check list
 
-	rename(originalFile, newpath);//rename path
+	//rename(originalFile, newpath);//rename path
 }
 
 // Rename all supported files within a specific folder
@@ -178,4 +178,10 @@ void UndoAll(std::vector<std::pair<fs::path, fs::path>> &names)//undo all rename
 {
 	for(const auto [old,news]:names)
 		rename(news,old);
+}
+
+void renameALL(std::vector<std::pair<fs::path, fs::path>> &names)
+{
+	for(const auto [old,news]:names)
+		rename(old,news);
 }
