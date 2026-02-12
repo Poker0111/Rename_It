@@ -13,8 +13,9 @@
 ##  How It Works
 1. **Subtitles:** If you have subtitle files, you can add a language extension (e.g., `en`, `pl`) in the app.
 2. **Directory:** Choose the root directory of your series.
-3. **Apply:** Click **"Apply"** to start the process.
-4. **Result:** The program will automatically rename video and subtitle files to the `Name - SXXEXX` format.
+3. **Preview Checklist** Verify that all filenames are correct. If not, uncheck the box to skip them.
+4. **Apply:** Click **"Apply"** to start the process.
+5. **Result:** The program will automatically rename video and subtitle files to the `Name - S__E__` format.
 
 ## ⚠️ Important: Folder Structure
 - If video files are in the main folder without a **Season Folder**, they will automatically be assigned to **Season 01 (S01)**.
@@ -25,6 +26,7 @@ Name/
 ├── Season 1/
 │   ├── Episode 01.mkv
 │   └── Episode 02.mkv
+│   └── Episode 02.ass
 ├── Season 2/
 │   ├── Ep 1.mkv
 │   └── Ep 2.mkv
@@ -44,8 +46,8 @@ Name/
    *Note: Wxwidgets packages may be required to be installed*
 
 ##  Roadmap & Future Plans
-- [ ] **Live Preview Checklist:** A list view allowing users to check/uncheck specific files and see exactly what the new filename will look like before applying changes.
-- [ ] **Undo Functionality:** One-click option to revert the last renaming operation and restore original filenames.
+- [x] **Live Preview Checklist:** A list view allowing users to check/uncheck specific files and see exactly what the new filename will look like before applying changes.
+- [x] **Undo Functionality:** One-click option to revert the last renaming operation and restore original filenames.
 - [ ] **Framework Migration:** Planned transition to **Qt** for a more modern UI
 - [ ] **macOS Support:** Native `.app` bundle releases.
 
