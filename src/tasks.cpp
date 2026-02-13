@@ -120,34 +120,6 @@ void renameFolder(const fs::path &path, const int seasonNumber, const wstring &n
 	}
 }
 
-// Recursively process the main directory
-int renameRecursive(const fs::path &path, const wstring &name,const wstring &lang,vector<pair<fs::path, fs::path>> &names) {//check the main folder 
-	if (!fs::exists(path)) {//check
-		cout << "Error: Directory not found." << endl;
-		return -1;
-	}
-
-	if (!fs::is_directory(path)) {//chcek
-		cout << "Error: Path is not a directory!" << endl;
-		return -1;
-	}
-
-	for (const auto &file: fs::directory_iterator(path)) {//search a folder
-		if (!fs::is_directory(file)) {
-			std::wstring ext = file.path().extension().wstring();
-
-			// Rename files in the root folder (default to Season 1)
-			if(ext==L".mkv"||ext==L".mp4"||ext==L".srt"||ext==L".ass")
-				renameFile(path, file.path(), 1, name,lang,names);
-		} else {
-			// Process subfolders as seasons
-			const int seasonNumber = getSeasonNumber(fs::path(file.path()).filename().string());
-			renameFolder(file.path(), seasonNumber, name,lang,names);
-		}
-	}
-
-	return 0;
-}
 
 // Extract series name from folder name
 wstring getname(fs::path path){
@@ -165,13 +137,40 @@ wstring getname(fs::path path){
 }
 
 // Entry point for the renaming process
-void start(const fs::path &path,const wstring &lang,vector<pair<fs::path, fs::path>> &nazwy){
+std::vector<std::pair<fs::path, fs::path>> start(const fs::path &path, const std::wstring &lang){
+	
+	std::vector<std::pair<fs::path, fs::path>> names;
 	wstring nazwa=getname(path);
 	std::wstring pathStr = path.wstring();
+
 	// Normalize path separators for cross-platform compatibility
     std::replace(pathStr.begin(), pathStr.end(), L'\\', L'/');
 	fs::path cleanPath(pathStr);
-	renameRecursive(cleanPath,nazwa,lang,nazwy);
+
+	if (!fs::exists(path)) {//check
+		cout << "Error: Directory not found." << endl;
+		return names;
+	}
+
+	if (!fs::is_directory(path)) {//chcek
+		cout << "Error: Path is not a directory!" << endl;
+		return names;
+	}
+
+	for (const auto &file: fs::directory_iterator(path)) {//search a folder
+		if (!fs::is_directory(file)) {
+			std::wstring ext = file.path().extension().wstring();
+
+			// Rename files in the root folder (default to Season 1)
+			if(ext==L".mkv"||ext==L".mp4"||ext==L".srt"||ext==L".ass")
+				renameFile(path, file.path(), 1, nazwa,lang,names);
+		} else {
+			// Process subfolders as seasons
+			const int seasonNumber = getSeasonNumber(fs::path(file.path()).filename().string());
+			renameFolder(file.path(), seasonNumber, nazwa,lang,names);
+		}
+	}
+	return names;
 }
 
 void UndoAll(std::vector<std::pair<fs::path, fs::path>> &names)//undo all renames

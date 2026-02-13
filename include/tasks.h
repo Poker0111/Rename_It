@@ -12,7 +12,7 @@ bool isAllNumbers(const std::wstring &text);
 int getSeasonEpisode(const std::wstring &fileName);
 int getSeasonNumber(const std::wstring &fileName);
 
-int renameRecursive(const fs::path &path, const std::wstring &name,const std::wstring &lang,std::vector<std::pair<fs::path, fs::path>> &names);
+//int renameRecursive(const fs::path &path, const std::wstring &name,const std::wstring &lang,std::vector<std::pair<fs::path, fs::path>> &names);
 void renameFile(const fs::path &path, const fs::path& originalFile, const int seasonNumber, const std::wstring &name,const std::wstring &lang,std::vector<std::pair<fs::path, fs::path>> &names);
 void renameFolder(const fs::path &path, const int seasonNumber, const std::wstring &name,const std::wstring &lang,std::vector<std::pair<fs::path, fs::path>> &names);
 
