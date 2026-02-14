@@ -1,20 +1,36 @@
-cmake_minimum_required(VERSION 3.15)
-project(Rename_It)
+cmake_minimum_required(VERSION 3.16)
+project(Rename_It LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
-add_compile_definitions(_UCRT)
+set(CMAKE_AUTOMOC ON)
 
-set(wxWidgets_USE_STATIC ON)
-find_package(wxWidgets REQUIRED COMPONENTS core base)
-include(${wxWidgets_USE_FILE})
+# Szukamy paczek Qt
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick QuickControls2 LinguistTools Widgets)
 
-file(GLOB SOURCES "src/*.cpp" "resources/resource.rc")
+# 1. ODKOMENTUJ TO: Definicja plików tłumaczeń
+set(TS_FILES 
+    i18n/lang_pl.ts 
+    i18n/lang_ja.ts
+)
+qt6_add_translations(${PROJECT_NAME} TS_FILES ${TS_FILES})
 
-add_executable(${PROJECT_NAME} WIN32 ${SOURCES} ${INCLUDE})
+# Ścieżka do pliku zasobów (QML)
+qt6_add_resources(RESOURCES ui/qml.qrc)
 
-target_include_directories(${PROJECT_NAME} PRIVATE include)
-target_link_libraries(${PROJECT_NAME} PRIVATE ${wxWidgets_LIBRARIES})
+# 2. ODKOMENTUJ TO: Wszystkie pliki źródłowe muszą być na liście
+add_executable(${PROJECT_NAME}
+    src/main.cpp
+    #src/LanguageManager.cpp  # Musi być odkomentowane
+    #src/LanguageManager.h    # Musi być odkomentowane
+    #src/FileHandler.h         # Musi być odkomentowane
+    src/tasks.cpp
+    ${RESOURCES}
+)
 
-if(MINGW)
-    target_link_options(${PROJECT_NAME} PRIVATE -static -lucrt)
-endif()
+# 3. Informujemy kompilator, gdzie szukać nagłówków (np. tasks.h w folderze src)
+target_include_directories(${PROJECT_NAME} PRIVATE src include)
+
+# Linkowanie bibliotek
+target_link_libraries(${PROJECT_NAME} PRIVATE
+    Qt6::Core Qt6::Gui Qt6::Qml Qt6::Quick Qt6::QuickControls2
+)
