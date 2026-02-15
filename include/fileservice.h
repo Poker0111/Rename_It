@@ -4,21 +4,19 @@
 #include <QObject>
 #include <QString>
 #include <QUrl>
-#include "tasks.h"
+#include <vector>
+#include <filesystem>
+#include "tasks.h" // Upewnij się, że ten plik istnieje w projekcie
+
+namespace fs = std::filesystem;
 
 class FileHandler : public QObject {
     Q_OBJECT
 public:
-    explicit FileHandler(QObject *parent = nullptr) : QObject(parent) {}
+    explicit FileHandler(QObject *parent = nullptr);
 
-    // Ta funkcja jest widoczna dla QML (przycisk ją wywoła)
-    Q_INVOKABLE void start(QString path,QString langTag) {
-        // 1. Zamieniamy ścieżkę z QML na taką, którą rozumie Twój C++
-        std::string cleanPath = QUrl(path).toLocalFile().toStdString();
-        std::wstring cleanLang = langTag.toStdWString();
-
-        start(cleanPath,cleanLang);
-        }
+    // Ta nazwa musi być identyczna w .cpp i wywołaniu w QML
+    Q_INVOKABLE void startProcess(QString qPath, QString qLang);
 };
 
-#endif
+#endif // FILEHANDLER_H

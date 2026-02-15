@@ -22,7 +22,7 @@ add_executable(${PROJECT_NAME}
     src/main.cpp
     #src/LanguageManager.cpp  # Musi być odkomentowane
     #src/LanguageManager.h    # Musi być odkomentowane
-    #src/FileHandler.h         # Musi być odkomentowane
+    src/fileservice.cpp         # Musi być odkomentowane
     src/tasks.cpp
     ${RESOURCES}
 )

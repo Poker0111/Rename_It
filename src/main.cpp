@@ -7,15 +7,13 @@ int main(int argc, char *argv[]) {
     QGuiApplication app(argc, argv);
     QQmlApplicationEngine engine;
 
-   // LanguageManager langManager(&engine);
     FileHandler fileHandler;
-
-    // Udostępniamy obie usługi dla QML
-    //engine.rootContext()->setContextProperty("languageService", &langManager);
+    // To sprawia, że w QML piszesz 'fileService.startProcess(...)'
     engine.rootContext()->setContextProperty("fileService", &fileHandler);
 
-    // Wczytujemy QML z folderu ui (przez zasoby qrc)
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
+    // Upewnij się, że main.qml jest w zasobach pod tą ścieżką
+    const QUrl url(QStringLiteral("qrc:/main.qml")); 
+    engine.load(url);
 
     return app.exec();
 }
