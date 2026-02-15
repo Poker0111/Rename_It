@@ -35,10 +35,14 @@ jobs:
         shell: bash
         run: |
           cd build
-          # Przygotowanie DLL-ek (windeployqt)
-          windeployqt --no-translations --compiler-runtime Rename_It.exe
+          # Dodajemy flagi, które wymuszają skopiowanie bibliotek runtime (np. libstdc++)
+          windeployqt --no-translations --compiler-runtime --no-opengl-sw Rename_It.exe
           
-          # Kopiowanie tłumaczeń, jeśli istnieją
+          # Czasami windeployqt omija te pliki przy MinGW, kopiujemy je ręcznie dla pewności
+          cp /bin/libstdc++-6.dll . || true
+          cp /bin/libgcc_s_seh-1.dll . || true
+          cp /bin/libwinpthread-1.dll . || true
+
           if [ -d "../translations" ]; then cp -r ../translations .; fi
 
       - name: Create Zip
