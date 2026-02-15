@@ -45,3 +45,7 @@ target_link_libraries(${PROJECT_NAME} PRIVATE
 )
 file(GLOB QM_FILES "${CMAKE_CURRENT_SOURCE_DIR}/translations/*.qm")
 file(COPY ${QM_FILES} DESTINATION "${CMAKE_CURRENT_BINARY_DIR}/translations")
+
+set(Qt6_STATIC ON)
+# Dla Windowsa często trzeba też wymusić statyczne linkowanie bibliotek systemowych
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -static -static-libgcc -static-libstdc++")
