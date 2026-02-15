@@ -2,7 +2,8 @@ name: Build and Release
 on:
   push:
     tags:
-      - 'v*' # Uruchomi się, gdy nadasz tag wersji, np. v1.0
+      - 'v*'
+  workflow_dispatch: 
 
 jobs:
   build:
@@ -14,7 +15,7 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v3
         with:
-          version: '6.6.0' # Możesz zmienić na swoją wersję
+          version: '6.6.0' 
           host: 'windows'
           target: 'desktop'
           arch: 'win64_mingw'
