@@ -23,16 +23,16 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
-          cmake --build . --parallel 4
+          # Dodajemy flagę wyłączającą problematyczne metatypy QML
+          cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DQT_NO_ASSET_APPENDING=ON
+          # Budujemy bez równoległości (parallel 1), aby uniknąć konfliktów dostępu do plików
+          cmake --build .
           
       - name: Deploy Libraries
         shell: bash
         run: |
           cd build
-          # windeployqt jest w PATH dzięki install-qt-action
           windeployqt --qmldir ../ui --no-translations --compiler-runtime Rename_It.exe
-          # Kopiujemy folder translations jeśli istnieje
           if [ -d "../translations" ]; then cp -r ../translations .; fi
 
       - name: Create Zip
