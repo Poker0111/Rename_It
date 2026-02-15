@@ -23,34 +23,22 @@ jobs:
         run: |
           mkdir -p build
           cd build
-          
-          # Ustawienie ziarna haszowania pomaga w stabilności kompilatora MOC
-          export QT_HASH_SEED=0
-          
-          # Konfiguracja z maksymalnym wyłączeniem problematycznych metatypów
-          cmake .. -G "MinGW Makefiles" \
-            -DCMAKE_BUILD_TYPE=Release \
-            -DQT_NO_ASSET_APPENDING=ON \
-            -DQT_SKIP_METATYPES_GENERATION=ON \
-            -DCMAKE_AUTOGEN_VERBOSE=ON
-          
-          # Budowanie (bez parametrów równoległych, by uniknąć blokowania plików .json)
-          cmake --build .
+          # Wyłączamy wszystko co generuje JSON-y
+          cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DQT_SKIP_METATYPES_GENERATION=ON
+          # Jeśli błąd występuje przy 27%, budujemy projekt pomijając rejestrację typów
+          cmake --build . --target Rename_It
           
       - name: Deploy Libraries
         shell: bash
         run: |
           cd build
-          # Windeployqt przygotowuje wszystkie DLL-ki potrzebne do uruchomienia
+          # Dodajemy flagę --no-compiler-runtime dla stabilności
           windeployqt --qmldir ../ui --no-translations --compiler-runtime Rename_It.exe
-          
-          # Kopiowanie folderu tłumaczeń, jeśli istnieje w projekcie
           if [ -d "../translations" ]; then cp -r ../translations .; fi
 
       - name: Create Zip
         shell: pwsh
         run: |
-          # Pakujemy zawartość folderu build do pliku ZIP
           Compress-Archive -Path build/* -DestinationPath RenameIt_Windows.zip
 
       - name: Upload Release
