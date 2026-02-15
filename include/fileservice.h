@@ -17,6 +17,7 @@ public:
 
     // Ta nazwa musi być identyczna w .cpp i wywołaniu w QML
     Q_INVOKABLE void startProcess(QString qPath, QString qLang);
+    std::vector<std::pair<fs::path, fs::path>> results;
 };
 
 #endif // FILEHANDLER_H
