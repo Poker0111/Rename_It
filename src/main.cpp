@@ -8,11 +8,17 @@ int main(int argc, char *argv[]) {
     QQmlApplicationEngine engine;
 
     FileHandler fileHandler;
-    // To sprawia, że w QML piszesz 'fileService.startProcess(...)'
     engine.rootContext()->setContextProperty("fileService", &fileHandler);
 
-    // Upewnij się, że main.qml jest w zasobach pod tą ścieżką
-    const QUrl url(QStringLiteral("qrc:/main.qml")); 
+    // UWAGA: Ścieżka musi pasować do URI z CMake
+    const QUrl url(QStringLiteral("qrc:/RenameModule/ui/main.qml"));
+
+    QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
+        &app, [url](QObject *obj, const QUrl &objUrl) {
+            if (!obj && url == objUrl)
+                QCoreApplication::exit(-1);
+        }, Qt::QueuedConnection);
+
     engine.load(url);
 
     return app.exec();

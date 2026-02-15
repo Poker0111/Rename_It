@@ -93,6 +93,7 @@ void renameFile(const fs::path &path, const fs::path& originalFile, const int se
 	newname+= originalFile.extension().wstring();
 
 	fs::path newpath = path / newname; //create new path
+	rename(originalFile,newpath);
 	
 	names.push_back({originalFile,newpath});//push back old and new names for undo funcion and check list
 
