@@ -3,7 +3,7 @@ on:
   push:
     tags:
       - 'v*'
-  workflow_dispatch: 
+  workflow_dispatch:
 
 jobs:
   build:
@@ -15,28 +15,28 @@ jobs:
       - name: Install Qt
         uses: jurplel/install-qt-action@v3
         with:
-          version: '6.6.0' 
-          host: 'windows'
-          target: 'desktop'
+          version: '6.6.0'
           arch: 'win64_mingw'
 
-      - name: Setup MinGW
-        uses: egor-tensin/setup-mingw@v2
-
       - name: Build Application
+        shell: bash
         run: |
           mkdir build
           cd build
           cmake -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release ..
           cmake --build .
-
+          
       - name: Deploy Libraries
+        shell: bash
         run: |
           cd build
+          # windeployqt jest w PATH dzięki install-qt-action
           windeployqt --qmldir ../ui --no-translations --compiler-runtime Rename_It.exe
-          cp -r ../translations . # Kopiuje Twoje tłumaczenia
+          # Kopiujemy folder translations jeśli istnieje
+          if [ -d "../translations" ]; then cp -r ../translations .; fi
 
       - name: Create Zip
+        shell: pwsh
         run: |
           Compress-Archive -Path build/* -DestinationPath RenameIt_Windows.zip
 
