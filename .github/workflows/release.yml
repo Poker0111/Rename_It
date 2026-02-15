@@ -21,23 +21,26 @@ jobs:
       - name: Build Application
         shell: bash
         run: |
-          mkdir build
+          mkdir -p build
           cd build
-          # Dodajemy flagę wyłączającą problematyczne metatypy QML
+          # Flaga -DQT_NO_ASSET_APPENDING=ON jest opcjonalna, skoro masz to w CMakeLists.txt, 
+          # ale zostawienie jej tutaj nie zaszkodzi.
           cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DQT_NO_ASSET_APPENDING=ON
-          # Budujemy bez równoległości (parallel 1), aby uniknąć konfliktów dostępu do plików
           cmake --build .
           
       - name: Deploy Libraries
         shell: bash
         run: |
           cd build
+          # To narzędzie skopiuje wszystkie potrzebne DLL-ki do folderu build
           windeployqt --qmldir ../ui --no-translations --compiler-runtime Rename_It.exe
+          # Kopiujemy pliki tłumaczeń, jeśli istnieją
           if [ -d "../translations" ]; then cp -r ../translations .; fi
 
       - name: Create Zip
         shell: pwsh
         run: |
+          # Pakujemy zawartość folderu build do jednego pliku ZIP
           Compress-Archive -Path build/* -DestinationPath RenameIt_Windows.zip
 
       - name: Upload Release
