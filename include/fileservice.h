@@ -17,6 +17,11 @@ public:
     Q_INVOKABLE void startProcess(QString qPath, QString qLang);
     Q_INVOKABLE void rename(const QVariantList &checkedStates);
     Q_INVOKABLE void undo();
+    Q_INVOKABLE void reset() {
+    results.clear();
+    pathlist.clear();
+    emit filesParsed(pathlist);
+}
 
 signals:
     void filesParsed(QVariantList fileList);

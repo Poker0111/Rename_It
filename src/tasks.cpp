@@ -68,10 +68,15 @@ void renameFile(const fs::path &path, const fs::path& originalFile, const int se
     std::wstring s_str = (seasonNumber < 10) ? L"0" + std::to_wstring(seasonNumber) : std::to_wstring(seasonNumber);
     std::wstring e_str = (episodeNumber < 10) ? L"0" + std::to_wstring(episodeNumber) : std::to_wstring(episodeNumber);
     std::wstring newname = name + L" S" + s_str + L"E" + e_str;
-    newname += (originalFile.extension().wstring() == L".ass" || originalFile.extension().wstring() == L".srt") ? (L"." + lang) : L"";
+    
+	newname += (originalFile.extension().wstring() == L".ass" || originalFile.extension().wstring() == L".srt") ? (L"." + lang) : L"";
     newname+= originalFile.extension().wstring();
-    fs::path newpath = path / newname; 
-    names.push_back({originalFile,newpath});
+    
+	fs::path newpath = path / newname; 
+	if(!fs::exists(newpath))
+		names.push_back({originalFile,newpath});
+    
+	
 }
 
 void renameFolder(const fs::path &path, const int seasonNumber, const wstring &name,const wstring &lang,vector<pair<fs::path, fs::path>> &names) {

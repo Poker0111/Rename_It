@@ -8,17 +8,24 @@
 namespace fs = std::filesystem;
 
 FileHandler::FileHandler(QObject *parent) : QObject(parent) {
+    
 }
 
 void FileHandler::startProcess(QString qPath, QString qLang) {
+
     pathlist.clear(); 
     results.clear();
+    finalselection.clear();
+
     fs::path nativePath = QUrl(qPath).toLocalFile().toStdWString();
     std::wstring nativeLang = qLang.toStdWString();
+
     if (!fs::exists(nativePath)) return;
-    results = start(nativePath, nativeLang);
+        results = start(nativePath, nativeLang);
+    
     for(const auto& i : results){
         QVariantMap item;
+
         item.insert("oldName", QString::fromStdWString(i.first.filename().wstring()));
         item.insert("newName", QString::fromStdWString(i.second.filename().wstring()));
         item.insert("checked", true); 
@@ -29,25 +36,24 @@ void FileHandler::startProcess(QString qPath, QString qLang) {
 
 void FileHandler::rename(const QVariantList &checkedStates){
     if (results.empty() || checkedStates.size() != results.size()) return;
-    std::vector<std::pair<fs::path, fs::path>> toRename;
-    for (int i = 0; i < results.size(); ++i) {
+    for (int i = 0; i < results.size(); i++) {
         if (checkedStates[i].toBool()) {
-            toRename.push_back(results[i]);
+            finalselection.push_back(results[i]);
         }
     }
-    if (!toRename.empty()) {
+    if (!finalselection.empty()) {
         try {
-            renameALL(toRename);
+            renameALL(finalselection);
         } catch (const std::exception& e) {
-            qDebug() << e.what();
+            //qDebug() << e.what();
         }
     }
 }
 
 void FileHandler::undo(){
    if (!results.empty()) {
-        UndoAll(results);
-        results.clear();
+        UndoAll(finalselection);
+        finalselection.clear();
         pathlist.clear();
         emit filesParsed(pathlist);
    }

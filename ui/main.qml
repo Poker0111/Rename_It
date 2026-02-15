@@ -3,18 +3,55 @@ import QtQuick.Controls
 import QtQuick.Dialogs
 import QtQuick.Layouts
 
-Window {
+ApplicationWindow {
+    id: window
     width: 600
     height: 500
     visible: true
-    title: "Rename It"
+    // Używamy + LangManager.emptyString, aby wymusić odświeżenie przy zmianie języka
+    title: qsTr("Rename It") + LangManager.emptyString
+
+    menuBar: MenuBar {
+        Menu {
+            title: qsTr("Edit") + LangManager.emptyString
+            Action {
+                text: qsTr("Undo") + LangManager.emptyString
+                shortcut: "Ctrl+Z"
+                onTriggered: fileService.undo()
+            }
+        }
+        Menu {
+            title: qsTr("Languages") + LangManager.emptyString
+
+            ActionGroup { id: langGroup }
+
+            Action {
+                text: "English"
+                checkable: true
+                checked: true
+                ActionGroup.group: langGroup
+                onTriggered: LangManager.setLanguage("en")
+            }
+            Action {
+                text: "Polski"
+                checkable: true
+                ActionGroup.group: langGroup
+                onTriggered: LangManager.setLanguage("pl")
+            }
+            Action {
+                text: "日本語"
+                checkable: true
+                ActionGroup.group: langGroup
+                onTriggered: LangManager.setLanguage("ja")
+            }
+        }
+    }
 
     ListModel { id: filesModel }
 
     Connections {
         target: fileService
         function onFilesParsed(fileList) {
-            console.log("Dane dotarły! Liczba plików: " + fileList.length)
             filesModel.clear()
             for (var i = 0; i < fileList.length; i++) {
                 filesModel.append(fileList[i])
@@ -36,16 +73,24 @@ Window {
 
         TextField {
             id: field
-            placeholderText: "Wpisz tag języka (np. pl, ja)"
+            placeholderText: qsTr("Wpisz tag języka (np. pl, jp)") + LangManager.emptyString
             Layout.fillWidth: true
         }
 
         Button {
-            text: "1. Wybierz folder i parsuj pliki"
+            text: qsTr("1. Wybierz folder") + LangManager.emptyString
             Layout.fillWidth: true
             onClicked: folderDialog.open()
         }
 
+        Text {
+            text: (qsTr("Ścieżka: ") + LangManager.emptyString) + folderDialog.selectedFolder.toString().replace("file:///", "")
+            font.bold: true
+            Layout.fillWidth: true
+            elide: Text.ElideMiddle
+        }
+
+        // --- SEKCJA FRAME Z LISTĄ PLIKÓW ---
         Frame {
             Layout.fillWidth: true
             Layout.fillHeight: true
@@ -54,12 +99,18 @@ Window {
             ListView {
                 id: listView
                 anchors.fill: parent
+                clip: true
                 model: filesModel
-                delegate: CheckDelegate {
-                    width: listView.width
-                    text: model.oldName + " ➔ " + model.newName
-                    checked: model.checked 
+                rightMargin: 15 
 
+                ScrollBar.vertical: ScrollBar {
+                    policy: ScrollBar.AsNeeded
+                }
+
+                delegate: CheckDelegate {
+                    width: listView.width - listView.rightMargin
+                    text: model.oldName + " ➔ " + model.newName
+                    checked: model.checked
                     onCheckedChanged: {
                         if (filesModel.get(index).checked !== checked) {
                             filesModel.setProperty(index, "checked", checked)
@@ -69,11 +120,13 @@ Window {
             }
         }
 
+        // --- PRZYCISKI NA DOLE ---
         RowLayout {
             Layout.fillWidth: true
             
             Button {
-                text: "2. Apply (Rename)"
+                text: qsTr("2. Apply (Rename)") + LangManager.emptyString
+                enabled: filesModel.count > 0
                 Layout.fillWidth: true
                 onClicked: {
                     let states = []
@@ -86,9 +139,12 @@ Window {
             }
 
             Button {
-                text: "Undo"
+                text: qsTr("Reset") + LangManager.emptyString
                 Layout.fillWidth: true
-                onClicked: fileService.undo()
+                onClicked: {
+                    filesModel.clear();
+                    field.clear();
+                }
             }
         }
     }
