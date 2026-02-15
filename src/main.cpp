@@ -10,7 +10,6 @@ int main(int argc, char *argv[]) {
     FileHandler fileHandler;
     engine.rootContext()->setContextProperty("fileService", &fileHandler);
 
-    // UWAGA: Ścieżka musi pasować do URI z CMake
     const QUrl url(QStringLiteral("qrc:/RenameModule/ui/main.qml"));
 
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,

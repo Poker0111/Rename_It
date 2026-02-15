@@ -4,9 +4,8 @@ project(Rename_It LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_AUTOMOC ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick QuickControls2 Widgets)
+find_package(Qt6 REQUIRED COMPONENTS Core Gui Qml Quick QuickControls2 Widgets QuickLayouts)
 
-# Dodajemy folder z nagłówkami
 include_directories(include)
 
 add_executable(${PROJECT_NAME} 
@@ -15,7 +14,6 @@ add_executable(${PROJECT_NAME}
     src/tasks.cpp
 )
 
-# Konfiguracja modułu QML
 qt_add_qml_module(${PROJECT_NAME}
     URI RenameModule
     VERSION 1.0
@@ -27,5 +25,5 @@ qt_add_qml_module(${PROJECT_NAME}
 )
 
 target_link_libraries(${PROJECT_NAME} PRIVATE 
-    Qt6::Core Qt6::Gui Qt6::Qml Qt6::Quick Qt6::QuickControls2 Qt6::Widgets
+    Qt6::Core Qt6::Gui Qt6::Qml Qt6::Quick Qt6::QuickControls2 Qt6::Widgets Qt6::QuickLayouts
 )

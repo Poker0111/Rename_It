@@ -4,20 +4,27 @@
 #include <QObject>
 #include <QString>
 #include <QUrl>
+#include <QVariantList>
 #include <vector>
 #include <filesystem>
-#include "tasks.h" // Upewnij się, że ten plik istnieje w projekcie
-
-namespace fs = std::filesystem;
+#include "tasks.h"
 
 class FileHandler : public QObject {
     Q_OBJECT
 public:
     explicit FileHandler(QObject *parent = nullptr);
 
-    // Ta nazwa musi być identyczna w .cpp i wywołaniu w QML
     Q_INVOKABLE void startProcess(QString qPath, QString qLang);
+    Q_INVOKABLE void rename(const QVariantList &checkedStates);
+    Q_INVOKABLE void undo();
+
+signals:
+    void filesParsed(QVariantList fileList);
+
+private:
     std::vector<std::pair<fs::path, fs::path>> results;
+    std::vector<std::pair<fs::path, fs::path>> finalselection;
+    QVariantList pathlist;
 };
 
-#endif // FILEHANDLER_H
+#endif
