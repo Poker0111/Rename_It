@@ -5,6 +5,10 @@ on:
       - 'v*'
   workflow_dispatch:
 
+# To rozwiązuje błąd 403 - daje skryptowi prawo do stworzenia Release
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: windows-latest
@@ -23,7 +27,7 @@ jobs:
         run: |
           mkdir -p build
           cd build
-          # Klasyczna konfiguracja bez zbędnych flag
+          # Używamy standardowego CMake, który zadziałał ostatnio
           cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
           cmake --build .
 
@@ -31,13 +35,16 @@ jobs:
         shell: bash
         run: |
           cd build
-          # windeployqt przygotuje paczkę (pamiętaj o poprawnej nazwie .exe)
+          # Przygotowanie DLL-ek (windeployqt)
           windeployqt --no-translations --compiler-runtime Rename_It.exe
+          
+          # Kopiowanie tłumaczeń, jeśli istnieją
           if [ -d "../translations" ]; then cp -r ../translations .; fi
 
       - name: Create Zip
         shell: pwsh
         run: |
+          # Pakowanie wszystkiego z folderu build do ZIP
           Compress-Archive -Path build/* -DestinationPath RenameIt_Windows.zip
 
       - name: Upload Release
