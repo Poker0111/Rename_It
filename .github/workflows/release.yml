@@ -23,17 +23,16 @@ jobs:
         run: |
           mkdir -p build
           cd build
-          # Wyłączamy wszystko co generuje JSON-y
-          cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release -DQT_SKIP_METATYPES_GENERATION=ON
-          # Jeśli błąd występuje przy 27%, budujemy projekt pomijając rejestrację typów
-          cmake --build . --target Rename_It
-          
+          # Klasyczna konfiguracja bez zbędnych flag
+          cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
+          cmake --build .
+
       - name: Deploy Libraries
         shell: bash
         run: |
           cd build
-          # Dodajemy flagę --no-compiler-runtime dla stabilności
-          windeployqt --qmldir ../ui --no-translations --compiler-runtime Rename_It.exe
+          # windeployqt przygotuje paczkę (pamiętaj o poprawnej nazwie .exe)
+          windeployqt --no-translations --compiler-runtime Rename_It.exe
           if [ -d "../translations" ]; then cp -r ../translations .; fi
 
       - name: Create Zip
