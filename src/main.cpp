@@ -23,7 +23,8 @@ int main(int argc, char *argv[]) {
     engine.rootContext()->setContextProperty("fileService", &fileHandler);
 
     // 3. Ładowanie QML
-    const QUrl url(QStringLiteral("qrc:/ui/main.qml"));
+    // W src/main.cpp zmień linię z url na tę:
+const QUrl url(QStringLiteral("qrc:/qt/qml/Rename_It/ui/main.qml"));
 
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreated,
         &app, [url](QObject *obj, const QUrl &objUrl) {
