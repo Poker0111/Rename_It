@@ -5,7 +5,7 @@ on:
       - 'v*'
   workflow_dispatch:
 
-# To rozwiązuje błąd 403 - daje skryptowi prawo do stworzenia Release
+# Rozwiązuje błąd 403 Forbidden przy tworzeniu Release
 permissions:
   contents: write
 
@@ -27,7 +27,6 @@ jobs:
         run: |
           mkdir -p build
           cd build
-          # Używamy standardowego CMake, który zadziałał ostatnio
           cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
           cmake --build .
 
@@ -35,20 +34,23 @@ jobs:
         shell: bash
         run: |
           cd build
-          # Dodajemy flagi, które wymuszają skopiowanie bibliotek runtime (np. libstdc++)
+          # windeployqt zbiera biblioteki Qt
+          # flaga --compiler-runtime jest KLUCZOWA, by uniknąć błędów DLL
           windeployqt --no-translations --compiler-runtime --no-opengl-sw Rename_It.exe
           
-          # Czasami windeployqt omija te pliki przy MinGW, kopiujemy je ręcznie dla pewności
+          # Ręczne kopiowanie krytycznych plików MinGW, których windeployqt czasem nie widzi
+          # To one odpowiadają za błąd "Nie znaleziono punktu wejścia procedury"
           cp /bin/libstdc++-6.dll . || true
           cp /bin/libgcc_s_seh-1.dll . || true
           cp /bin/libwinpthread-1.dll . || true
-
+          
+          # Kopiujemy tłumaczenia, jeśli istnieją
           if [ -d "../translations" ]; then cp -r ../translations .; fi
 
       - name: Create Zip
         shell: pwsh
         run: |
-          # Pakowanie wszystkiego z folderu build do ZIP
+          # Pakujemy zawartość folderu build do pliku ZIP
           Compress-Archive -Path build/* -DestinationPath RenameIt_Windows.zip
 
       - name: Upload Release
